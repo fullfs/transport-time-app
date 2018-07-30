@@ -26,8 +26,6 @@
                 <el-button type="primary" round @click="getDistance(row)">Рассчитать</el-button>
                 <el-button type="warning" round @click="clearRow(row)">Очистить</el-button>
             </div>
-
-
         </div>
     </div>
 
@@ -61,7 +59,8 @@ export default {
     },
 
     mounted() {
-        var GoogleMapsLoader = require('google-maps');
+        // Работает только на FE, поэтому тянем в mounted через require
+        const GoogleMapsLoader = require('google-maps');
         GoogleMapsLoader.load((google) => {
             this.google = google;
         });
